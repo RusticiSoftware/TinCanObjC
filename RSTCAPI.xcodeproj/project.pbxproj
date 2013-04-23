@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		D3062B4316F7C50D004F746A /* TinCanSDK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D3062B4416F7C50D004F746A /* Build configuration list for PBXAggregateTarget "TinCanSDK" */;
+			buildPhases = (
+				D3062B6116F7C8C7004F746A /* ShellScript */,
+				D3062C9C16FFF73F004F746A /* ShellScript */,
+			);
+			dependencies = (
+				D3062B4816F7C553004F746A /* PBXTargetDependency */,
+			);
+			name = TinCanSDK;
+			productName = TinCanSDK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		D3062B7116FBEBD3004F746A /* TCStatementCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = D3062B6F16FBEBD3004F746A /* TCStatementCollection.m */; };
+		D3DBF13016E02D8D008661C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DBF12F16E02D8D008661C7 /* Foundation.framework */; };
+		D3DBF13516E02D8D008661C7 /* RSTCAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3DBF13416E02D8D008661C7 /* RSTCAPI.h */; };
+		D3DBF13F16E02D8D008661C7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DBF13E16E02D8D008661C7 /* SenTestingKit.framework */; };
+		D3DBF14116E02D8D008661C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DBF14016E02D8D008661C7 /* UIKit.framework */; };
+		D3DBF14216E02D8D008661C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DBF12F16E02D8D008661C7 /* Foundation.framework */; };
+		D3DBF14516E02D8D008661C7 /* libRSTCAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DBF12C16E02D8D008661C7 /* libRSTCAPI.a */; };
+		D3DBF14B16E02D8D008661C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3DBF14916E02D8D008661C7 /* InfoPlist.strings */; };
+		D3DBF14E16E02D8D008661C7 /* RSTCAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF14D16E02D8D008661C7 /* RSTCAPITests.m */; };
+		D3DBF15916E02E20008661C7 /* RSTinCanConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF15816E02E20008661C7 /* RSTinCanConnector.m */; };
+		D3DBF15C16E02EE0008661C7 /* TCLRS.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF15B16E02EE0008661C7 /* TCLRS.m */; };
+		D3DBF15F16E02F52008661C7 /* TCStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF15E16E02F52008661C7 /* TCStatement.m */; };
+		D3DBF16216E03EEC008661C7 /* TCError.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF16116E03EEC008661C7 /* TCError.m */; };
+		D3DBF16516E07955008661C7 /* TestSemaphor.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DBF16416E07955008661C7 /* TestSemaphor.m */; };
+		D3E00DE216E19B200020C36E /* TCUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E00DE116E19B200020C36E /* TCUtil.m */; };
+		D3E00DE516E300480020C36E /* TCLocalizedValues.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E00DE416E300480020C36E /* TCLocalizedValues.m */; };
+		D3E00DE816E322CC0020C36E /* TCVerb.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E00DE716E322CC0020C36E /* TCVerb.m */; };
+		D3E00DEB16E7A4380020C36E /* TCAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E00DEA16E7A4380020C36E /* TCAgent.m */; };
+		D3E00DEE16E7A92D0020C36E /* TCActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E00DED16E7A92D0020C36E /* TCActivity.m */; };
+		D3E00DF116E7C19B0020C36E /* TCActivityDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E00DF016E7C19B0020C36E /* TCActivityDefinition.m */; };
+		D3E00DF716EA59400020C36E /* TCQueryOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E00DF616EA59400020C36E /* TCQueryOptions.m */; };
+		D3E00DFA16ED11190020C36E /* TCState.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E00DF916ED11190020C36E /* TCState.m */; };
+		D3E00DFD16F435B50020C36E /* TCContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E00DFC16F435B50020C36E /* TCContext.m */; };
+		D3F5CEFC171BACC400F1D206 /* RSTinCanConnector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3DBF15716E02E20008661C7 /* RSTinCanConnector.h */; };
+		D3F5CEFD171BACC400F1D206 /* TCLRS.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3DBF15A16E02EE0008661C7 /* TCLRS.h */; };
+		D3F5CEFE171BACC400F1D206 /* TCStatement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3DBF15D16E02F52008661C7 /* TCStatement.h */; };
+		D3F5CEFF171BACC400F1D206 /* TCStatementCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3062B7016FBEBD3004F746A /* TCStatementCollection.h */; };
+		D3F5CF00171BACC400F1D206 /* TCError.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3DBF16016E03EEC008661C7 /* TCError.h */; };
+		D3F5CF01171BACC400F1D206 /* TCUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3E00DE016E19B200020C36E /* TCUtil.h */; };
+		D3F5CF02171BACC400F1D206 /* TCLocalizedValues.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3E00DE316E300480020C36E /* TCLocalizedValues.h */; };
+		D3F5CF03171BACC400F1D206 /* TCVerb.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3E00DE616E322CC0020C36E /* TCVerb.h */; };
+		D3F5CF04171BACC400F1D206 /* TCAgent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3E00DE916E7A4380020C36E /* TCAgent.h */; };
+		D3F5CF05171BACC400F1D206 /* TCActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3E00DEC16E7A92C0020C36E /* TCActivity.h */; };
+		D3F5CF06171BACC400F1D206 /* TCActivityDefinition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3E00DEF16E7C19B0020C36E /* TCActivityDefinition.h */; };
+		D3F5CF07171BACC400F1D206 /* TCQueryOptions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3E00DF516EA59400020C36E /* TCQueryOptions.h */; };
+		D3F5CF08171BACC400F1D206 /* TCState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3E00DF816ED11180020C36E /* TCState.h */; };
+		D3F5CF09171BACC400F1D206 /* TCContext.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3E00DFB16F435B50020C36E /* TCContext.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3062B4716F7C553004F746A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DBF12416E02D8D008661C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3DBF12B16E02D8D008661C7;
+			remoteInfo = RSTCAPI;
+		};
+		D3DBF14316E02D8D008661C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3DBF12416E02D8D008661C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3DBF12B16E02D8D008661C7;
+			remoteInfo = RSTCAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D3DBF12A16E02D8D008661C7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				D3F5CEFC171BACC400F1D206 /* RSTinCanConnector.h in CopyFiles */,
+				D3F5CEFD171BACC400F1D206 /* TCLRS.h in CopyFiles */,
+				D3F5CEFE171BACC400F1D206 /* TCStatement.h in CopyFiles */,
+				D3F5CEFF171BACC400F1D206 /* TCStatementCollection.h in CopyFiles */,
+				D3F5CF00171BACC400F1D206 /* TCError.h in CopyFiles */,
+				D3F5CF01171BACC400F1D206 /* TCUtil.h in CopyFiles */,
+				D3F5CF02171BACC400F1D206 /* TCLocalizedValues.h in CopyFiles */,
+				D3F5CF03171BACC400F1D206 /* TCVerb.h in CopyFiles */,
+				D3F5CF04171BACC400F1D206 /* TCAgent.h in CopyFiles */,
+				D3F5CF05171BACC400F1D206 /* TCActivity.h in CopyFiles */,
+				D3F5CF06171BACC400F1D206 /* TCActivityDefinition.h in CopyFiles */,
+				D3F5CF07171BACC400F1D206 /* TCQueryOptions.h in CopyFiles */,
+				D3F5CF08171BACC400F1D206 /* TCState.h in CopyFiles */,
+				D3F5CF09171BACC400F1D206 /* TCContext.h in CopyFiles */,
+				D3DBF13516E02D8D008661C7 /* RSTCAPI.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D3062B4F16F7C628004F746A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		D3062B6F16FBEBD3004F746A /* TCStatementCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCStatementCollection.m; sourceTree = "<group>"; };
+		D3062B7016FBEBD3004F746A /* TCStatementCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCStatementCollection.h; sourceTree = "<group>"; };
+		D3DBF12C16E02D8D008661C7 /* libRSTCAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRSTCAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3DBF12F16E02D8D008661C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D3DBF13316E02D8D008661C7 /* RSTCAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSTCAPI-Prefix.pch"; sourceTree = "<group>"; };
+		D3DBF13416E02D8D008661C7 /* RSTCAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RSTCAPI.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D3DBF13D16E02D8D008661C7 /* RSTCAPITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSTCAPITests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3DBF13E16E02D8D008661C7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D3DBF14016E02D8D008661C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D3DBF14816E02D8D008661C7 /* RSTCAPITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RSTCAPITests-Info.plist"; sourceTree = "<group>"; };
+		D3DBF14A16E02D8D008661C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D3DBF14C16E02D8D008661C7 /* RSTCAPITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RSTCAPITests.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D3DBF14D16E02D8D008661C7 /* RSTCAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSTCAPITests.m; sourceTree = "<group>"; };
+		D3DBF15716E02E20008661C7 /* RSTinCanConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RSTinCanConnector.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D3DBF15816E02E20008661C7 /* RSTinCanConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RSTinCanConnector.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D3DBF15A16E02EE0008661C7 /* TCLRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCLRS.h; sourceTree = "<group>"; };
+		D3DBF15B16E02EE0008661C7 /* TCLRS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCLRS.m; sourceTree = "<group>"; };
+		D3DBF15D16E02F52008661C7 /* TCStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCStatement.h; sourceTree = "<group>"; };
+		D3DBF15E16E02F52008661C7 /* TCStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCStatement.m; sourceTree = "<group>"; };
+		D3DBF16016E03EEC008661C7 /* TCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TCError.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D3DBF16116E03EEC008661C7 /* TCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCError.m; sourceTree = "<group>"; };
+		D3DBF16316E07955008661C7 /* TestSemaphor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSemaphor.h; sourceTree = "<group>"; };
+		D3DBF16416E07955008661C7 /* TestSemaphor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSemaphor.m; sourceTree = "<group>"; };
+		D3E00DE016E19B200020C36E /* TCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUtil.h; sourceTree = "<group>"; };
+		D3E00DE116E19B200020C36E /* TCUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUtil.m; sourceTree = "<group>"; };
+		D3E00DE316E300480020C36E /* TCLocalizedValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCLocalizedValues.h; sourceTree = "<group>"; };
+		D3E00DE416E300480020C36E /* TCLocalizedValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCLocalizedValues.m; sourceTree = "<group>"; };
+		D3E00DE616E322CC0020C36E /* TCVerb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCVerb.h; sourceTree = "<group>"; };
+		D3E00DE716E322CC0020C36E /* TCVerb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCVerb.m; sourceTree = "<group>"; };
+		D3E00DE916E7A4380020C36E /* TCAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TCAgent.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D3E00DEA16E7A4380020C36E /* TCAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TCAgent.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D3E00DEC16E7A92C0020C36E /* TCActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TCActivity.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D3E00DED16E7A92D0020C36E /* TCActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TCActivity.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D3E00DEF16E7C19B0020C36E /* TCActivityDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TCActivityDefinition.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D3E00DF016E7C19B0020C36E /* TCActivityDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TCActivityDefinition.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D3E00DF516EA59400020C36E /* TCQueryOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TCQueryOptions.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D3E00DF616EA59400020C36E /* TCQueryOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TCQueryOptions.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		D3E00DF816ED11180020C36E /* TCState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TCState.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D3E00DF916ED11190020C36E /* TCState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCState.m; sourceTree = "<group>"; };
+		D3E00DFB16F435B50020C36E /* TCContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TCContext.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		D3E00DFC16F435B50020C36E /* TCContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TCContext.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3DBF12916E02D8D008661C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DBF13016E02D8D008661C7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3DBF13916E02D8D008661C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DBF13F16E02D8D008661C7 /* SenTestingKit.framework in Frameworks */,
+				D3DBF14116E02D8D008661C7 /* UIKit.framework in Frameworks */,
+				D3DBF14216E02D8D008661C7 /* Foundation.framework in Frameworks */,
+				D3DBF14516E02D8D008661C7 /* libRSTCAPI.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D3DBF12316E02D8D008661C7 = {
+			isa = PBXGroup;
+			children = (
+				D3DBF13116E02D8D008661C7 /* RSTCAPI */,
+				D3DBF14616E02D8D008661C7 /* RSTCAPITests */,
+				D3DBF12E16E02D8D008661C7 /* Frameworks */,
+				D3DBF12D16E02D8D008661C7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D3DBF12D16E02D8D008661C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3DBF12C16E02D8D008661C7 /* libRSTCAPI.a */,
+				D3DBF13D16E02D8D008661C7 /* RSTCAPITests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3DBF12E16E02D8D008661C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3DBF12F16E02D8D008661C7 /* Foundation.framework */,
+				D3DBF13E16E02D8D008661C7 /* SenTestingKit.framework */,
+				D3DBF14016E02D8D008661C7 /* UIKit.framework */,
+				D3062B4F16F7C628004F746A /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3DBF13116E02D8D008661C7 /* RSTCAPI */ = {
+			isa = PBXGroup;
+			children = (
+				D3DBF13416E02D8D008661C7 /* RSTCAPI.h */,
+				D3DBF13216E02D8D008661C7 /* Supporting Files */,
+				D3DBF15716E02E20008661C7 /* RSTinCanConnector.h */,
+				D3DBF15816E02E20008661C7 /* RSTinCanConnector.m */,
+				D3DBF15A16E02EE0008661C7 /* TCLRS.h */,
+				D3DBF15B16E02EE0008661C7 /* TCLRS.m */,
+				D3DBF15D16E02F52008661C7 /* TCStatement.h */,
+				D3DBF15E16E02F52008661C7 /* TCStatement.m */,
+				D3062B6F16FBEBD3004F746A /* TCStatementCollection.m */,
+				D3062B7016FBEBD3004F746A /* TCStatementCollection.h */,
+				D3DBF16016E03EEC008661C7 /* TCError.h */,
+				D3DBF16116E03EEC008661C7 /* TCError.m */,
+				D3E00DE016E19B200020C36E /* TCUtil.h */,
+				D3E00DE116E19B200020C36E /* TCUtil.m */,
+				D3E00DE316E300480020C36E /* TCLocalizedValues.h */,
+				D3E00DE416E300480020C36E /* TCLocalizedValues.m */,
+				D3E00DE616E322CC0020C36E /* TCVerb.h */,
+				D3E00DE716E322CC0020C36E /* TCVerb.m */,
+				D3E00DE916E7A4380020C36E /* TCAgent.h */,
+				D3E00DEA16E7A4380020C36E /* TCAgent.m */,
+				D3E00DEC16E7A92C0020C36E /* TCActivity.h */,
+				D3E00DED16E7A92D0020C36E /* TCActivity.m */,
+				D3E00DEF16E7C19B0020C36E /* TCActivityDefinition.h */,
+				D3E00DF016E7C19B0020C36E /* TCActivityDefinition.m */,
+				D3E00DF516EA59400020C36E /* TCQueryOptions.h */,
+				D3E00DF616EA59400020C36E /* TCQueryOptions.m */,
+				D3E00DF816ED11180020C36E /* TCState.h */,
+				D3E00DF916ED11190020C36E /* TCState.m */,
+				D3E00DFB16F435B50020C36E /* TCContext.h */,
+				D3E00DFC16F435B50020C36E /* TCContext.m */,
+			);
+			path = RSTCAPI;
+			sourceTree = "<group>";
+		};
+		D3DBF13216E02D8D008661C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3DBF13316E02D8D008661C7 /* RSTCAPI-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3DBF14616E02D8D008661C7 /* RSTCAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				D3DBF16316E07955008661C7 /* TestSemaphor.h */,
+				D3DBF16416E07955008661C7 /* TestSemaphor.m */,
+				D3DBF14C16E02D8D008661C7 /* RSTCAPITests.h */,
+				D3DBF14D16E02D8D008661C7 /* RSTCAPITests.m */,
+				D3DBF14716E02D8D008661C7 /* Supporting Files */,
+			);
+			path = RSTCAPITests;
+			sourceTree = "<group>";
+		};
+		D3DBF14716E02D8D008661C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3DBF14816E02D8D008661C7 /* RSTCAPITests-Info.plist */,
+				D3DBF14916E02D8D008661C7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3DBF12B16E02D8D008661C7 /* RSTCAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3DBF15116E02D8D008661C7 /* Build configuration list for PBXNativeTarget "RSTCAPI" */;
+			buildPhases = (
+				D3DBF12816E02D8D008661C7 /* Sources */,
+				D3DBF12916E02D8D008661C7 /* Frameworks */,
+				D3DBF12A16E02D8D008661C7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RSTCAPI;
+			productName = RSTCAPI;
+			productReference = D3DBF12C16E02D8D008661C7 /* libRSTCAPI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D3DBF13C16E02D8D008661C7 /* RSTCAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3DBF15416E02D8D008661C7 /* Build configuration list for PBXNativeTarget "RSTCAPITests" */;
+			buildPhases = (
+				D3DBF13816E02D8D008661C7 /* Sources */,
+				D3DBF13916E02D8D008661C7 /* Frameworks */,
+				D3DBF13A16E02D8D008661C7 /* Resources */,
+				D3DBF13B16E02D8D008661C7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3DBF14416E02D8D008661C7 /* PBXTargetDependency */,
+			);
+			name = RSTCAPITests;
+			productName = RSTCAPITests;
+			productReference = D3DBF13D16E02D8D008661C7 /* RSTCAPITests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3DBF12416E02D8D008661C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Brian Rogers";
+			};
+			buildConfigurationList = D3DBF12716E02D8D008661C7 /* Build configuration list for PBXProject "RSTCAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D3DBF12316E02D8D008661C7;
+			productRefGroup = D3DBF12D16E02D8D008661C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3DBF12B16E02D8D008661C7 /* RSTCAPI */,
+				D3062B4316F7C50D004F746A /* TinCanSDK */,
+				D3DBF13C16E02D8D008661C7 /* RSTCAPITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3DBF13A16E02D8D008661C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DBF14B16E02D8D008661C7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D3062B6116F7C8C7004F746A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "XCODEBUILD_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin\nXCODEBUILD=$XCODEBUILD_PATH/xcodebuild\n\n$XCODEBUILD -project RSTCAPI.xcodeproj -target \"RSTCAPI\" -sdk \"iphoneos\" -configuration \"Release\" clean build\n\n$XCODEBUILD -project RSTCAPI.xcodeproj -target \"RSTCAPI\" -sdk \"iphonesimulator\" -configuration \"Release\" clean build\n\nlipo -create -output \"build/libRSTCAPI-Combined.a\" \"build/Release-iphoneos/libRSTCAPI.a\" \"build/Release-iphonesimulator/libRSTCAPI.a\"";
+		};
+		D3062C9C16FFF73F004F746A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/appledoc --project-name \"TinCanObjC\" --project-company \"Rustici Software\" --company-id \"com.rusticisoftware\" --output \"~/Desktop/TinCanObjC-Docs\" --logformat xcode --keep-undocumented-objects --keep-undocumented-members --keep-intermediate-files --no-repeat-first-par --no-warn-invalid-crossref --ignore \"*.m\" --ignore \"RSTCAPITests.h\" --index-desc \"README.md\" .";
+		};
+		D3DBF13B16E02D8D008661C7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3DBF12816E02D8D008661C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DBF15916E02E20008661C7 /* RSTinCanConnector.m in Sources */,
+				D3DBF15C16E02EE0008661C7 /* TCLRS.m in Sources */,
+				D3DBF15F16E02F52008661C7 /* TCStatement.m in Sources */,
+				D3DBF16216E03EEC008661C7 /* TCError.m in Sources */,
+				D3E00DE216E19B200020C36E /* TCUtil.m in Sources */,
+				D3E00DE516E300480020C36E /* TCLocalizedValues.m in Sources */,
+				D3E00DE816E322CC0020C36E /* TCVerb.m in Sources */,
+				D3E00DEB16E7A4380020C36E /* TCAgent.m in Sources */,
+				D3E00DEE16E7A92D0020C36E /* TCActivity.m in Sources */,
+				D3E00DF116E7C19B0020C36E /* TCActivityDefinition.m in Sources */,
+				D3E00DF716EA59400020C36E /* TCQueryOptions.m in Sources */,
+				D3E00DFA16ED11190020C36E /* TCState.m in Sources */,
+				D3E00DFD16F435B50020C36E /* TCContext.m in Sources */,
+				D3062B7116FBEBD3004F746A /* TCStatementCollection.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3DBF13816E02D8D008661C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DBF14E16E02D8D008661C7 /* RSTCAPITests.m in Sources */,
+				D3DBF16516E07955008661C7 /* TestSemaphor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3062B4816F7C553004F746A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3DBF12B16E02D8D008661C7 /* RSTCAPI */;
+			targetProxy = D3062B4716F7C553004F746A /* PBXContainerItemProxy */;
+		};
+		D3DBF14416E02D8D008661C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3DBF12B16E02D8D008661C7 /* RSTCAPI */;
+			targetProxy = D3DBF14316E02D8D008661C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D3DBF14916E02D8D008661C7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3DBF14A16E02D8D008661C7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D3062B4516F7C50D004F746A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D3062B4616F7C50D004F746A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D3DBF14F16E02D8D008661C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D3DBF15016E02D8D008661C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3DBF15216E02D8D008661C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/RSTCAPI.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RSTCAPI/RSTCAPI-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D3DBF15316E02D8D008661C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/RSTCAPI.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RSTCAPI/RSTCAPI-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D3DBF15516E02D8D008661C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RSTCAPI/RSTCAPI-Prefix.pch";
+				INFOPLIST_FILE = "RSTCAPITests/RSTCAPITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D3DBF15616E02D8D008661C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RSTCAPI/RSTCAPI-Prefix.pch";
+				INFOPLIST_FILE = "RSTCAPITests/RSTCAPITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3062B4416F7C50D004F746A /* Build configuration list for PBXAggregateTarget "TinCanSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3062B4516F7C50D004F746A /* Debug */,
+				D3062B4616F7C50D004F746A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3DBF12716E02D8D008661C7 /* Build configuration list for PBXProject "RSTCAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3DBF14F16E02D8D008661C7 /* Debug */,
+				D3DBF15016E02D8D008661C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3DBF15116E02D8D008661C7 /* Build configuration list for PBXNativeTarget "RSTCAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3DBF15216E02D8D008661C7 /* Debug */,
+				D3DBF15316E02D8D008661C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3DBF15416E02D8D008661C7 /* Build configuration list for PBXNativeTarget "RSTCAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3DBF15516E02D8D008661C7 /* Debug */,
+				D3DBF15616E02D8D008661C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3DBF12416E02D8D008661C7 /* Project object */;
+}
