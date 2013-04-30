@@ -20,6 +20,8 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <Security/Security.h>
+#import <CommonCrypto/CommonHMAC.h>
 
 @interface TCUtil : NSObject
 
@@ -28,5 +30,7 @@
 + (NSString *)stringByRemovingControlCharacters: (NSString *)inputString;
 
 + (NSString*)encodeURL:(NSString *)string;
+
++ (NSString*)computeSHA256DigestForString:(NSString*)input;
 
 @end
