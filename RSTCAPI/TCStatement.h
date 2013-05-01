@@ -19,10 +19,15 @@
  limitations under the License.
  */
 
+// https://github.com/timburks/NuHTTPHelpers/blob/master/objc/NuHTTPHelpers.m
+// for parsing multipart/mixed for 1.0
+
 #import <Foundation/Foundation.h>
 #import "TCVerb.h"
 #import "TCAgent.h"
 #import "TCActivity.h"
+#import "TCAttachment.h"
+#import "TCAttachmentCollection.h"
 
 @interface TCStatement : NSObject
 
@@ -30,10 +35,14 @@
 @property (nonatomic, retain) TCAgent *actor;
 @property (nonatomic, retain) NSObject *target;
 @property (nonatomic, retain) TCVerb *verb;
+@property (nonatomic, retain) NSString *boundary;
+@property (nonatomic, retain) TCAttachmentCollection *attachments;
 
 - (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb;
 
 - (id) initWithJSON:(NSString *)statementJSON;
+
+- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb withBoundary:(NSString *)boundary withAttachments:(TCAttachmentCollection *)attachmentArray;
 
 - (NSDictionary *) dictionary;
 

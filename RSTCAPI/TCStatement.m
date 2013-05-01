@@ -24,7 +24,12 @@
 
 @implementation TCStatement
 
-@synthesize statementId = _statementId, actor = _actor, target = _target, verb = _verb;
+@synthesize statementId = _statementId;
+@synthesize actor = _actor;
+@synthesize target = _target;
+@synthesize verb = _verb;
+@synthesize boundary = _boundary;
+@synthesize attachments = _attachments;
 
 - (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb
 {
@@ -33,6 +38,19 @@
         _actor = actor;
         _target = target;
         _verb = verb;
+    }
+    return self;
+}
+
+- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb withBoundary:(NSString *)boundary withAttachments:(TCAttachmentCollection *)attachmentArray
+{
+    if ((self = [super init])) {
+        _statementId = statementId;
+        _actor = actor;
+        _target = target;
+        _verb = verb;
+        _boundary = boundary;
+        _attachments = attachmentArray;
     }
     return self;
 }
@@ -65,6 +83,7 @@
     return self;
 }
 
+
 - (NSDictionary *) dictionary
 {
     NSMutableDictionary *statement = [[NSMutableDictionary alloc] init];
@@ -74,12 +93,16 @@
         [statement setValue:[(TCActivity *)_target dictionary] forKey:@"object"];
     }
     [statement setValue:[_verb dictionary] forKey:@"verb"];
-
+    if(_attachments.count>0){
+        [statement setValue:_attachments forKey:@"attachments"];
+    }
     return [statement copy];
 }
 
 - (NSString *) JSONString
 {
+    NSMutableString *output = [[NSMutableString alloc] init];
+    
     NSMutableDictionary *statement = [[NSMutableDictionary alloc] init];
     [statement setValue:_statementId forKey:@"id"];
     [statement setValue:[_actor dictionary] forKey:@"actor"];
@@ -87,16 +110,41 @@
         [statement setValue:[(TCActivity *)_target dictionary] forKey:@"object"];
     }
     [statement setValue:[_verb dictionary] forKey:@"verb"];
-    
+    if(_attachments){
+        [statement setValue:[_attachments array] forKey:@"attachments"];
+    }
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:statement
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
-
+    
     NSString *jsonString = [[TCUtil stringByRemovingControlCharacters:[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]] stringByReplacingOccurrencesOfString:@"\\" withString:@""];
     
-    NSLog(@"jsonString from statement : %@", jsonString);
+    if(_boundary){
+        [output appendFormat:@"\r\n--%@", _boundary];
+        [output appendFormat:@"\r\n"];
+        [output appendFormat:@"Content-Type:application/json"];
+        [output appendFormat:@"\r\n\r\n"];
+        [output appendFormat:@"%@",jsonString ];
+        [output appendFormat:@"\r\n"];
+        [output appendFormat:@"--%@", _boundary];
+        [output appendFormat:@"\r\n"];
+        //foreach attachment
+        TCAttachment *attachment = (TCAttachment *)[_attachments attachmentAtIndex:0];
+        [output appendFormat:@"Content-Type:%@", [attachment valueForKey:@"contentType" ]];
+        [output appendFormat:@"\r\n"];
+        [output appendFormat:@"Content-Transfer-Encoding:%@", [attachment valueForKey:@"contentTransferEncoding"]];
+        [output appendFormat:@"\r\n"];
+        [output appendFormat:@"X-Experience-API-Hash:%@", [attachment valueForKey:@"sha2"]];
+        [output appendFormat:@"\r\n\r\n"];
+        [output appendFormat:@"%@", [attachment valueForKey:@"dataString"]];
+        [output appendFormat:@"\r\n"];
+        [output appendFormat:@"--%@--\r\n", _boundary];
+    }else{
 
-    return jsonString;
+        [output appendFormat:@"%@",jsonString ];
+    }
+    
+    return output;
 }
 @end
