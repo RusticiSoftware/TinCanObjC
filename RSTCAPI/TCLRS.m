@@ -48,7 +48,7 @@
         _version = (NSString *)[options valueForKey:@"version"];
         if(![_version isEqualToString:kTC_VERSION_0_95] && ![_version isEqualToString:kTC_VERSION_1_0_0])
         {
-            _version = kTC_VERSION_0_95; //default to 0.95 for now
+            _version = kTC_VERSION_1_0_0; //default to 1.0.0 for now
         }
     }
     return self;
@@ -71,11 +71,18 @@
     NSData *requestData = [NSData dataWithBytes: [requestString UTF8String] length: [requestString length]];
     NSString *postLength = [NSString stringWithFormat:@"%d", [requestData length]];
 
+    NSLog(@"statement JSON %@", [statement JSONString]);
+    
+    if(statement.boundary){
+        // multipart/mixed format
+        [urlRequest setValue:[NSString stringWithFormat:@"multipart/mixed; boundary=%@", statement.boundary] forHTTPHeaderField:@"Content-Type"];
+    }else{
+        //standard JSON format
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    }
     
     [urlRequest setValue:_auth forHTTPHeaderField:@"Authorization"];
-    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [urlRequest setValue:_version forHTTPHeaderField:@"X-Experience-API-Version"];
-    
     [urlRequest setHTTPMethod:@"PUT"];
     [urlRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
@@ -89,13 +96,13 @@
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         
         NSLog(@"HTTP response code: %i", httpResponse.statusCode);
-        
+
         if(httpResponse.statusCode == 204){
             dispatch_async(dispatch_get_main_queue(), ^{
                 completionBlock();
             });
         }
-        else if (httpResponse.statusCode == 400){
+        else if (httpResponse.statusCode >= 400){
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSString* errorStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                 TCError *error400 = [[TCError alloc] initWithMessage:[NSString stringWithFormat:@"%@", errorStr]];

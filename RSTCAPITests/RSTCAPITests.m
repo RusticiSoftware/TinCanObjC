@@ -42,7 +42,7 @@
     [lrs setValue:@"Basic ahutdpeurhks23865hkksiet84573authstringbase64=" forKey:@"auth"];
     // just add one LRS for now
     [options setValue:[NSArray arrayWithObject:lrs] forKey:@"recordStore"];
-    [options setValue:@"1.0.0" forKey:@"version"];
+    [options setValue:@"0.95" forKey:@"version"];
     tincan = [[RSTinCanConnector alloc]initWithOptions:options];
 }
 
@@ -213,8 +213,6 @@
                                                                     withScale:nil
                                                                    withTarget:nil
                                                                     withSteps:nil];
-    
-    TCActivity *activity = [[TCActivity alloc] initWithId:[TCUtil encodeURL:@"http://tincanapi.com/test"] withActivityDefinition:actDef];
     
     
     NSMutableDictionary *stateContents = [[NSMutableDictionary alloc] init];
