@@ -35,10 +35,11 @@
 @property (nonatomic, retain) TCAgent *actor;
 @property (nonatomic, retain) NSObject *target;
 @property (nonatomic, retain) TCVerb *verb;
+@property (nonatomic, retain) NSDictionary *result;
 @property (nonatomic, retain) NSString *boundary;
 @property (nonatomic, retain) TCAttachmentCollection *attachments;
 
-- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb;
+- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb withResult:(NSDictionary *)result;
 
 - (id) initWithJSON:(NSString *)statementJSON;
 

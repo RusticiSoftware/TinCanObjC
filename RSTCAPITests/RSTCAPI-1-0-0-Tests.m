@@ -23,8 +23,10 @@
     
     NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *lrs = [[NSMutableDictionary alloc] init];
-    [lrs setValue:@"https://lrs/endpoint" forKey:@"endpoint"];
-    [lrs setValue:@"Basic ahutdpeurhks23865hkksiet84573authstringbase64=" forKey:@"auth"];
+    [lrs setValue:@"http://localhost:8080/ScormEngineInterface/TCAPI/" forKey:@"endpoint"];
+    [lrs setValue:@"Basic c3VwZXJ1c2VyOnN1cGVydXNlcg==" forKey:@"auth"];
+    [lrs setValue:@"1.0.0" forKey:@"version"];
+    //http://192.168.2.196/ScormEngineNG/TCAPI/
     // just add one LRS for now
     [options setValue:[NSArray arrayWithObject:lrs] forKey:@"recordStore"];
     [options setValue:@"1.0.0" forKey:@"version"];

@@ -38,11 +38,14 @@
     
     NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *lrs = [[NSMutableDictionary alloc] init];
-    [lrs setValue:@"https://lrs/endpoint" forKey:@"endpoint"];
-    [lrs setValue:@"Basic ahutdpeurhks23865hkksiet84573authstringbase64=" forKey:@"auth"];
+//    [lrs setValue:@"https://lrs/endpoint" forKey:@"endpoint"];
+//    [lrs setValue:@"Basic ahutdpeurhks23865hkksiet84573authstringbase64=" forKey:@"auth"];
+    
+    [lrs setValue:@"https://brianrogers.waxlrs.com/TCAPI/" forKey:@"endpoint"];
+    [lrs setValue:@"Basic QmFiMDhaNlVmSENYcTBoQUhrSm46dFhnY1hPNlpjZFRveU5ZOHo5NXQ=" forKey:@"auth"];
+    [lrs setValue:@"0.95" forKey:@"version"];
     // just add one LRS for now
     [options setValue:[NSArray arrayWithObject:lrs] forKey:@"recordStore"];
-    [options setValue:@"0.95" forKey:@"version"];
     tincan = [[RSTinCanConnector alloc]initWithOptions:options];
 }
 

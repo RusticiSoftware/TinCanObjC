@@ -25,6 +25,7 @@
 @interface RSTinCanConnector()
 {
     NSMutableArray *_recordStore;
+    
 }
 
 @end

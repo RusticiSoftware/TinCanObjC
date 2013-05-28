@@ -29,6 +29,7 @@
 		D342CC02172B98620024936B /* TCAttachment.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D342CBF8172B89FE0024936B /* TCAttachment.h */; };
 		D342CC05172B99E20024936B /* blue-book.png in Resources */ = {isa = PBXBuildFile; fileRef = D342CC04172B99E20024936B /* blue-book.png */; };
 		D342CC0A172BADFF0024936B /* TCAttachmentCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = D342CC09172BADFE0024936B /* TCAttachmentCollection.m */; };
+		D372ACF61734321800E92A3E /* TCAttachmentCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D342CC08172BADFE0024936B /* TCAttachmentCollection.h */; };
 		D3DBF13016E02D8D008661C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DBF12F16E02D8D008661C7 /* Foundation.framework */; };
 		D3DBF13516E02D8D008661C7 /* RSTCAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3DBF13416E02D8D008661C7 /* RSTCAPI.h */; };
 		D3DBF13F16E02D8D008661C7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DBF13E16E02D8D008661C7 /* SenTestingKit.framework */; };
@@ -90,6 +91,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				D372ACF61734321800E92A3E /* TCAttachmentCollection.h in CopyFiles */,
 				D342CC02172B98620024936B /* TCAttachment.h in CopyFiles */,
 				D3F5CEFC171BACC400F1D206 /* RSTinCanConnector.h in CopyFiles */,
 				D3F5CEFD171BACC400F1D206 /* TCLRS.h in CopyFiles */,
