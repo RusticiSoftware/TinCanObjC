@@ -31,8 +31,9 @@
 @synthesize result = _result;
 @synthesize boundary = _boundary;
 @synthesize attachments = _attachments;
+@synthesize context = _context;
 
-- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb withResult:(NSDictionary *)result
+- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb withResult:(TCResult *)result withContext:(TCContext *)context
 {
     if ((self = [super init])) {
         _statementId = statementId;
@@ -40,17 +41,20 @@
         _target = target;
         _verb = verb;
         _result = result;
+        _context = context;
     }
     return self;
 }
 
-- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb withBoundary:(NSString *)boundary withAttachments:(TCAttachmentCollection *)attachmentArray
+- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb withResult:(TCResult *)result withContext:(TCContext *)context withBoundary:(NSString *)boundary withAttachments:(TCAttachmentCollection *)attachmentArray
 {
     if ((self = [super init])) {
         _statementId = statementId;
         _actor = actor;
         _target = target;
         _verb = verb;
+        _result = result;
+        _context = context;
         _boundary = boundary;
         _attachments = attachmentArray;
     }
@@ -80,7 +84,10 @@
         {
             _target = [[TCActivity alloc] initWithDictionary:[statementDict objectForKey:@"object"]];
         }
-        // add the other types here
+    
+        _context = [[TCContext alloc] initWithDictionary:[statementDict objectForKey:@"context"]];
+        _result = [[TCResult alloc] initWithDictionary:[statementDict objectForKey:@"result"]];
+    
     }
     return self;
 }
@@ -95,7 +102,8 @@
         [statement setValue:[(TCActivity *)_target dictionary] forKey:@"object"];
     }
     [statement setValue:[_verb dictionary] forKey:@"verb"];
-    [statement setValue:_result forKey:@"result"];
+    [statement setValue:[_result dictionary] forKey:@"result"];
+    [statement setValue:[_context dictionary] forKey:@"context"];
     
     if(_attachments.count>0){
         [statement setValue:_attachments forKey:@"attachments"];
