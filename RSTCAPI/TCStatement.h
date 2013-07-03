@@ -28,6 +28,8 @@
 #import "TCActivity.h"
 #import "TCAttachment.h"
 #import "TCAttachmentCollection.h"
+#import "TCContext.h"
+#import "TCResult.h"
 
 @interface TCStatement : NSObject
 
@@ -35,14 +37,16 @@
 @property (nonatomic, retain) TCAgent *actor;
 @property (nonatomic, retain) NSObject *target;
 @property (nonatomic, retain) TCVerb *verb;
+@property (nonatomic, retain) TCResult *result;
+@property (nonatomic, retain) TCContext *context;
 @property (nonatomic, retain) NSString *boundary;
 @property (nonatomic, retain) TCAttachmentCollection *attachments;
 
-- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb;
+- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb withResult:(TCResult *)result withContext:(TCContext *)context;
 
 - (id) initWithJSON:(NSString *)statementJSON;
 
-- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb withBoundary:(NSString *)boundary withAttachments:(TCAttachmentCollection *)attachmentArray;
+- (id) initWithId:(NSString *)statementId withActor:(TCAgent *)actor withTarget:(NSObject *)target withVerb:(TCVerb *)verb withResult:(TCResult *)result withContext:(TCContext *)context withBoundary:(NSString *)boundary withAttachments:(TCAttachmentCollection *)attachmentArray;
 
 - (NSDictionary *) dictionary;
 

@@ -40,9 +40,10 @@
     NSMutableDictionary *lrs = [[NSMutableDictionary alloc] init];
     [lrs setValue:@"https://lrs/endpoint" forKey:@"endpoint"];
     [lrs setValue:@"Basic ahutdpeurhks23865hkksiet84573authstringbase64=" forKey:@"auth"];
+    
+    [lrs setValue:@"0.95" forKey:@"version"];
     // just add one LRS for now
     [options setValue:[NSArray arrayWithObject:lrs] forKey:@"recordStore"];
-    [options setValue:@"0.95" forKey:@"version"];
     tincan = [[RSTinCanConnector alloc]initWithOptions:options];
 }
 
@@ -185,7 +186,7 @@
     
     TCVerb *verb = [options valueForKey:@"verb"];
     
-    TCStatement *statementToSend = [[TCStatement alloc] initWithId:[TCUtil GetUUID] withActor:actor withTarget:activity withVerb:verb];
+    TCStatement *statementToSend = [[TCStatement alloc] initWithId:[TCUtil GetUUID] withActor:actor withTarget:activity withVerb:verb withResult:nil withContext:nil];
     
     return statementToSend;
 }

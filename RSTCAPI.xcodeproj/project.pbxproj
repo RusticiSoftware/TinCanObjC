@@ -29,6 +29,8 @@
 		D342CC02172B98620024936B /* TCAttachment.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D342CBF8172B89FE0024936B /* TCAttachment.h */; };
 		D342CC05172B99E20024936B /* blue-book.png in Resources */ = {isa = PBXBuildFile; fileRef = D342CC04172B99E20024936B /* blue-book.png */; };
 		D342CC0A172BADFF0024936B /* TCAttachmentCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = D342CC09172BADFE0024936B /* TCAttachmentCollection.m */; };
+		D372ACF61734321800E92A3E /* TCAttachmentCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D342CC08172BADFE0024936B /* TCAttachmentCollection.h */; };
+		D3CE911C17848AB50094A178 /* TCResult.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CE911B17848AB50094A178 /* TCResult.m */; };
 		D3DBF13016E02D8D008661C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DBF12F16E02D8D008661C7 /* Foundation.framework */; };
 		D3DBF13516E02D8D008661C7 /* RSTCAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3DBF13416E02D8D008661C7 /* RSTCAPI.h */; };
 		D3DBF13F16E02D8D008661C7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DBF13E16E02D8D008661C7 /* SenTestingKit.framework */; };
@@ -90,6 +92,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				D372ACF61734321800E92A3E /* TCAttachmentCollection.h in CopyFiles */,
 				D342CC02172B98620024936B /* TCAttachment.h in CopyFiles */,
 				D3F5CEFC171BACC400F1D206 /* RSTinCanConnector.h in CopyFiles */,
 				D3F5CEFD171BACC400F1D206 /* TCLRS.h in CopyFiles */,
@@ -122,6 +125,8 @@
 		D342CC04172B99E20024936B /* blue-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-book.png"; sourceTree = "<group>"; };
 		D342CC08172BADFE0024936B /* TCAttachmentCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAttachmentCollection.h; sourceTree = "<group>"; };
 		D342CC09172BADFE0024936B /* TCAttachmentCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAttachmentCollection.m; sourceTree = "<group>"; };
+		D3CE911A17848AB50094A178 /* TCResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCResult.h; sourceTree = "<group>"; };
+		D3CE911B17848AB50094A178 /* TCResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCResult.m; sourceTree = "<group>"; };
 		D3DBF12C16E02D8D008661C7 /* libRSTCAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRSTCAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DBF12F16E02D8D008661C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D3DBF13316E02D8D008661C7 /* RSTCAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSTCAPI-Prefix.pch"; sourceTree = "<group>"; };
@@ -250,6 +255,8 @@
 				D342CBF9172B89FE0024936B /* TCAttachment.m */,
 				D342CC08172BADFE0024936B /* TCAttachmentCollection.h */,
 				D342CC09172BADFE0024936B /* TCAttachmentCollection.m */,
+				D3CE911A17848AB50094A178 /* TCResult.h */,
+				D3CE911B17848AB50094A178 /* TCResult.m */,
 			);
 			path = RSTCAPI;
 			sourceTree = "<group>";
@@ -429,6 +436,7 @@
 				D3062B7116FBEBD3004F746A /* TCStatementCollection.m in Sources */,
 				D342CBFA172B89FE0024936B /* TCAttachment.m in Sources */,
 				D342CC0A172BADFF0024936B /* TCAttachmentCollection.m in Sources */,
+				D3CE911C17848AB50094A178 /* TCResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,6 +25,8 @@
 
 - (id)initWithRegistration:(NSString *)registration withInstructor:(NSObject *)instructor withTeam:(NSObject *)team withContextActivities:(NSDictionary *)contextActivities withExtensions:(NSDictionary *)extensions;
 
+- (id) initWithDictionary:(NSDictionary *)contextDictionary;
+- (NSDictionary *)dictionary;
 - (NSString *) JSONString;
 
 - (NSString *) querystring;

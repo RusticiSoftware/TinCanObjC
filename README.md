@@ -1,5 +1,6 @@
 TinCanObjC
 ==========
+[![Build Status](https://travis-ci.org/RusticiSoftware/TinCanObjC.png)](https://travis-ci.org/RusticiSoftware/TinCanObjC)
 
 ObjC version of TinCan SDK
 

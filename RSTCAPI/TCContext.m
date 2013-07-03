@@ -20,6 +20,7 @@
  */
 
 #import "TCContext.h"
+#import "TCUtil.h"
 
 @interface TCContext()
 {
@@ -27,6 +28,8 @@
     NSObject *_instructor;
     NSObject *_team;
     NSDictionary *_contextActivities;
+    NSDictionary *_extensions;
+    NSMutableDictionary *_contextDict;
 }
 @end
 
@@ -35,15 +38,34 @@
 - (id)initWithRegistration:(NSString *)registration withInstructor:(NSObject *)instructor withTeam:(NSObject *)team withContextActivities:(NSDictionary *)contextActivities withExtensions:(NSDictionary *)extensions
 {
     if ((self = [super init])) {
-        
+        _registration = registration;
+        _instructor = instructor;
+        _team = team;
+        _contextActivities = contextActivities;
+        _extensions = extensions;
     }
     return self;
 }
 
+- (NSDictionary *)dictionary
+{
+    _contextDict = [[NSMutableDictionary alloc] init];
+    [_contextDict setValue:_registration forKey:@"registration"];
+    [_contextDict setValue:_extensions forKey:@"extensions"];
+    [_contextDict setValue:_contextActivities forKey:@"contextActivities"];
+    return [_contextDict copy];
+}
+
 - (NSString *) JSONString
 {
-    NSString *result = [NSString stringWithFormat:@"Not Implemented Yet"];
-    return result;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:[self dictionary]
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    
+    NSString *jsonString = [[TCUtil stringByRemovingControlCharacters:[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]] stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+    
+    return jsonString;
 }
 
 - (NSString *)querystring
