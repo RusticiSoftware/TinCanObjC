@@ -18,7 +18,9 @@
 #import "TCStatementCollection.h"
 #import "TCAttachment.h"
 #import "TCAttachmentCollection.h"
-#import "Base64.h"
+#import "TCResult.h"
+#import "TCContext.h"
+
 
 @interface RSTCAPI_1_0_0_Tests : SenTestCase
 

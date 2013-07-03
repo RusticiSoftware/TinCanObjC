@@ -90,7 +90,6 @@
     [_actorDict setValue:_name forKey:@"name"];
     [_actorDict setValue:_mbox forKey:@"mbox"];
     [_actorDict setValue:@"Agent" forKey:@"objectType"];
-    NSLog(@"actor Dict : %@", _actorDict);
     return [_actorDict copy];
 }
 

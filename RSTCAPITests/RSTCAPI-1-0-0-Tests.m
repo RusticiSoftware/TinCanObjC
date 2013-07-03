@@ -23,8 +23,10 @@
     
     NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *lrs = [[NSMutableDictionary alloc] init];
-    [lrs setValue:@"https://lrs/endpoint" forKey:@"endpoint"];
-    [lrs setValue:@"Basic ahutdpeurhks23865hkksiet84573authstringbase64=" forKey:@"auth"];
+    //dummy LRS - supply your own credentials here to run tests
+    [lrs setValue:@"http://localhost:8080/ScormEngineInterface/TCAPI/"forKey:@"endpoint"];
+    [lrs setValue:@"Basic c3VwABCDc2dfghhjVyOngdf56hN1hcGV889kyd988XNlcg=="forKey:@"auth"];
+    [lrs setValue:@"1.0.0"forKey:@"version"];
     // just add one LRS for now
     [options setValue:[NSArray arrayWithObject:lrs] forKey:@"recordStore"];
     [options setValue:@"1.0.0" forKey:@"version"];
@@ -77,7 +79,7 @@
     
     TCVerb *verb = [statementOptions valueForKey:@"verb"];
     
-    TCStatement *statementToPost = [[TCStatement alloc] initWithId:[TCUtil GetUUID] withActor:actor withTarget:activity withVerb:verb withBoundary:@"abc123" withAttachments:attachments];
+    TCStatement *statementToPost = [[TCStatement alloc] initWithId:[TCUtil GetUUID] withActor:actor withTarget:activity withVerb:verb withResult:nil withContext:nil withBoundary:@"abc123" withAttachments:attachments];
     
     NSLog(@"%@", [statementToPost JSONString]);
     
@@ -93,6 +95,8 @@
     [[TestSemaphor sharedInstance] waitForKey:@"saveStatement"];
     
 }
+
+
 - (void)testSaveStatement
 {
     
@@ -223,7 +227,27 @@
     
     TCVerb *verb = [options valueForKey:@"verb"];
     
-    TCStatement *statementToSend = [[TCStatement alloc] initWithId:[TCUtil GetUUID] withActor:actor withTarget:activity withVerb:verb];
+    NSMutableDictionary *resultExt = [[NSMutableDictionary alloc] init];
+    [resultExt setValue:@"test value for extension" forKey:@"http://test/extension"];
+    
+    NSMutableDictionary *resultScore = [[NSMutableDictionary alloc] init];
+    [resultScore setValue:[NSNumber numberWithInt:75] forKey:@"raw"];
+    [resultScore setValue:[NSNumber numberWithInt:0] forKey:@"min"];
+    [resultScore setValue:[NSNumber numberWithInt:100] forKey:@"max"];
+    
+    NSNumber *completionValue = [NSNumber numberWithBool:YES];
+    NSNumber *successValue = [NSNumber numberWithBool:NO];
+    
+    
+    TCResult *result = [[TCResult alloc] initWithResponse:@"test response" withScore:resultScore withSuccess:successValue withCompletion:completionValue withDuration:@"P3Y6M4DT12H30M5S" withExtensions:resultExt];
+    
+    
+    NSMutableDictionary *contextExt = [[NSMutableDictionary alloc] init];
+    [contextExt setValue:@"test value for extension" forKey:@"http://test/extension"];
+    
+    TCContext *context = [[TCContext alloc] initWithRegistration:[TCUtil GetUUID] withInstructor:nil withTeam:nil withContextActivities:nil withExtensions:contextExt];
+    
+    TCStatement *statementToSend = [[TCStatement alloc] initWithId:[TCUtil GetUUID] withActor:actor withTarget:activity withVerb:verb withResult:result withContext:context];
     
     return statementToSend;
 }
