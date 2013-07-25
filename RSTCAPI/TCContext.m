@@ -47,6 +47,44 @@
     return self;
 }
 
+- (id) initWithDictionary:(NSDictionary *)contextDictionary
+{
+    if ((self = [super init])) {
+        
+        NSString *contextRegistration = [contextDictionary objectForKey:@"registration"];
+        NSObject *contextInstructor = [contextDictionary objectForKey:@"instructor"];
+        NSObject *contextTeam = [contextDictionary objectForKey:@"instructor"];
+        NSDictionary *contextActivities = [contextDictionary objectForKey:@"contextActivities"];
+        NSDictionary *contextExtensions = [contextDictionary objectForKey:@"extensions"];
+        
+        if(contextRegistration)
+        {
+            _registration = contextRegistration;
+        }
+        
+        if(contextInstructor)
+        {
+            _instructor = contextInstructor;
+        }
+        
+        if(contextTeam)
+        {
+            _team = contextTeam;
+        }
+        
+        if(contextActivities)
+        {
+            _contextActivities = contextActivities;
+        }
+        
+        if(contextExtensions)
+        {
+            _extensions = contextExtensions;
+        }
+    }
+    return self;
+}
+
 - (NSDictionary *)dictionary
 {
     _contextDict = [[NSMutableDictionary alloc] init];

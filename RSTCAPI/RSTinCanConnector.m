@@ -35,9 +35,7 @@
 - (id) initWithOptions:(NSDictionary *)options
 {
     if ((self = [super init])) {
-        _recordStore = [options valueForKey:@"recordStore"];
-        NSLog(@"recordStore %@", _recordStore);
-        
+        _recordStore = [options valueForKey:@"recordStore"];        
     }
     return self;
 }
