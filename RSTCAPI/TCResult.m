@@ -42,6 +42,42 @@
 {
     if ((self = [super init])) {
         
+        NSString *resultResponse = [resultDictionary objectForKey:@"response"];
+        NSDictionary *resultScore = [resultDictionary objectForKey:@"score"];
+        NSNumber *resultSuccess = [resultDictionary objectForKey:@"success"];
+        NSNumber *resultCompletion = [resultDictionary objectForKey:@"completion"];
+        NSString *resultDuration = [resultDictionary objectForKey:@"duration"];
+        NSDictionary *resultExtensions = [resultDictionary objectForKey:@"extensions"];
+        
+        if(resultResponse)
+        {
+            _response = resultResponse;
+        }
+        
+        if(resultScore)
+        {
+            _score = resultScore;
+        }
+        
+        if(resultSuccess)
+        {
+            _success = resultSuccess;
+        }
+        
+        if(resultCompletion)
+        {
+            _completion = resultCompletion;
+        }
+        
+        if(resultDuration)
+        {
+            _duration = resultDuration;
+        }
+        
+        if(resultExtensions)
+        {
+            _extensions = resultExtensions;
+        }
     }
     return self;
 }

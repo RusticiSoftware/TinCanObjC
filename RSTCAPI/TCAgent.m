@@ -46,7 +46,6 @@
     if ((self = [super init])) {
         NSError* error;
         NSDictionary *agentDict = [NSJSONSerialization JSONObjectWithData:[agentJSON dataUsingEncoding:NSStringEncodingConversionAllowLossy] options:kNilOptions error:&error];
-        NSLog(@"agentDict %@", agentDict);
         
         NSString *agentName = [agentDict objectForKey:@"name"];
         NSString *agentMbox = [agentDict objectForKey:@"mbox"];

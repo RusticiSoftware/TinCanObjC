@@ -116,7 +116,7 @@
     
     //remove extra spaces and encode the string before returning it
     NSString *qs = [[querystring copy] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSLog(@"qs : %@", qs);
+    
     return qs;
 }
 
