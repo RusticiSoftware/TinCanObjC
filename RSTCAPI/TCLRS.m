@@ -194,8 +194,6 @@
     [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [urlRequest setValue:_version forHTTPHeaderField:@"X-Experience-API-Version"];
     
-    NSLog(@"request %@", urlRequest.allHTTPHeaderFields);
-    
     [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         
         NSString* responseStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];

@@ -44,8 +44,21 @@
 - (id) initWithJSON:(NSString *)verbJSON
 {
     if ((self = [super init])) {
-//        _verbId = verbId;
-//        _display = display;
+        NSError* error;
+        NSDictionary *verbDict = [NSJSONSerialization JSONObjectWithData:[verbJSON dataUsingEncoding:NSStringEncodingConversionAllowLossy] options:kNilOptions error:&error];
+        
+        NSString *verbId = [verbDict objectForKey:@"id"];
+        TCLocalizedValues *verbDisplay = [[TCLocalizedValues alloc] initWithDictionary:[verbDict objectForKey:@"display"]];
+        
+        if(verbId)
+        {
+            _verbId = verbId;
+        }
+        
+        if(verbDisplay)
+        {
+            _display = verbDisplay;
+        }
     }
     return self;
 }

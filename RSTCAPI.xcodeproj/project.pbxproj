@@ -24,6 +24,7 @@
 
 /* Begin PBXBuildFile section */
 		D3062B7116FBEBD3004F746A /* TCStatementCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = D3062B6F16FBEBD3004F746A /* TCStatementCollection.m */; };
+		D334B3C517A07A6200B218D7 /* TCResult.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3CE911A17848AB50094A178 /* TCResult.h */; };
 		D342CBFA172B89FE0024936B /* TCAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = D342CBF9172B89FE0024936B /* TCAttachment.m */; };
 		D342CBFD172B8FA00024936B /* RSTCAPI-1-0-0-Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D342CBFC172B8FA00024936B /* RSTCAPI-1-0-0-Tests.m */; };
 		D342CC02172B98620024936B /* TCAttachment.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D342CBF8172B89FE0024936B /* TCAttachment.h */; };
@@ -92,6 +93,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				D334B3C517A07A6200B218D7 /* TCResult.h in CopyFiles */,
 				D372ACF61734321800E92A3E /* TCAttachmentCollection.h in CopyFiles */,
 				D342CC02172B98620024936B /* TCAttachment.h in CopyFiles */,
 				D3F5CEFC171BACC400F1D206 /* RSTinCanConnector.h in CopyFiles */,
