@@ -49,8 +49,12 @@
 
 - (void) testAgentObject
 {
-    TCAgent *agent = [[TCAgent alloc] initWithName:@"Joe User" withMbox:@"mailto:joe@example.com"];
-    STAssertEqualObjects(@"{  \"mbox\" : \"mailto:joe@example.com\",  \"name\" : \"Joe User\",  \"objectType\" : \"Agent\"}", [agent JSONString], @"actor json should match expected string");
+    NSMutableDictionary *accountDict = [[NSMutableDictionary alloc] init];
+    [accountDict setValue:@"http://example.org" forKey:@"homePage"];
+    [accountDict setValue:@"Test User" forKey:@"name"];
+    TCAgent *agent = [[TCAgent alloc] initWithName:@"Joe User" withMbox:@"mailto:joe@example.com" withAccount:accountDict];
+    STAssertEqualObjects(@"{  \"name\" : \"Joe User\",  \"account\" : {    \"homePage\" : \"http://example.org\",    \"name\" : \"Test User\"  },  \"mbox\" : \"mailto:joe@example.com\",  \"objectType\" : \"Agent\"}", [agent JSONString], @"actor json should match expected string");
+    NSLog(@"%@",[agent JSONString]);
     TCAgent *newAgent = [[TCAgent alloc] initWithJSON:[agent JSONString]];
     STAssertEqualObjects([agent JSONString], [newAgent JSONString], @"agent should be able to be created from JSON");
 }
@@ -65,7 +69,7 @@
 
 - (void) testQueryOptions
 {
-    TCQueryOptions *options = [[TCQueryOptions alloc] initWithActor:[[TCAgent alloc] initWithName:@"Test User" withMbox:@"mailto:test@tincanapi.com"] withVerb:[[TCVerb alloc] initWithId:@"http://adlnet.gov/expapi/verbs/attempted" withVerbDisplay:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"attempted"]] withTarget:nil withInstructor:nil withRegistration:nil withContext:YES withSince:nil withUntil:nil withLimit:[NSNumber numberWithInt:25] withAuthoritative:NO withSparse:NO withAscending:NO];
+    TCQueryOptions *options = [[TCQueryOptions alloc] initWithActor:[[TCAgent alloc] initWithName:@"Test User" withMbox:@"mailto:test@tincanapi.com" withAccount:nil] withVerb:[[TCVerb alloc] initWithId:@"http://adlnet.gov/expapi/verbs/attempted" withVerbDisplay:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"attempted"]] withTarget:nil withInstructor:nil withRegistration:nil withContext:YES withSince:nil withUntil:nil withLimit:[NSNumber numberWithInt:25] withAuthoritative:NO withSparse:NO withAscending:NO];
     STAssertEqualObjects(@"?context=true&authoritative=false&sparse=false&ascending=false&limit=25&actor=%7B%20%20%22mbox%22%20:%20%22mailto:test@tincanapi.com%22,%20%20%22name%22%20:%20%22Test%20User%22,%20%20%22objectType%22%20:%20%22Agent%22%7D&verb=http%3A%2F%2Fadlnet.gov%2Fexpapi%2Fverbs%2Fattempted", [options querystring], @"querystring should match expected value");
 }
 

@@ -25,6 +25,7 @@
 {
     NSString *_name;
     NSString *_mbox;
+    NSMutableDictionary *_accountDict;
     NSMutableDictionary *_actorDict;
 }
 
@@ -32,11 +33,12 @@
 
 @implementation TCAgent
 
-- (id)initWithName:(NSString *)name withMbox:(NSString *)mbox
+- (id)initWithName:(NSString *)name withMbox:(NSString *)mbox withAccount:(NSMutableDictionary *)accountDict
 {
     if ((self = [super init])) {
         _name = name;
         _mbox = mbox;
+        _accountDict = accountDict;
     }
     return self;
 }
@@ -49,6 +51,7 @@
         
         NSString *agentName = [agentDict objectForKey:@"name"];
         NSString *agentMbox = [agentDict objectForKey:@"mbox"];
+        NSMutableDictionary *accountDict = [agentDict objectForKey:@"account"];
         
         if(agentName)
         {
@@ -58,6 +61,11 @@
         if(agentMbox)
         {
             _mbox = agentMbox;
+        }
+        
+        if(accountDict)
+        {
+            _accountDict = accountDict;
         }
     }
     return self;
@@ -69,6 +77,7 @@
         
         NSString *agentName = [agentDictionary objectForKey:@"name"];
         NSString *agentMbox = [agentDictionary objectForKey:@"mbox"];
+        NSMutableDictionary *accountDict = [agentDictionary objectForKey:@"account"];
         
         if(agentName)
         {
@@ -79,6 +88,11 @@
         {
             _mbox = agentMbox;
         }
+        
+        if(accountDict)
+        {
+            _accountDict = accountDict;
+        }
     }
     return self;
 }
@@ -88,6 +102,7 @@
     _actorDict = [[NSMutableDictionary alloc] init];
     [_actorDict setValue:_name forKey:@"name"];
     [_actorDict setValue:_mbox forKey:@"mbox"];
+    [_actorDict setValue:_accountDict forKey:@"account"];
     [_actorDict setValue:@"Agent" forKey:@"objectType"];
     return [_actorDict copy];
 }
