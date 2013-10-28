@@ -24,7 +24,7 @@
 
 @interface TCAgent : NSObject
 
-- (id)initWithName:(NSString *)name withMbox:(NSString *)mbox;
+- (id)initWithName:(NSString *)name withMbox:(NSString *)mbox withAccount:(NSMutableDictionary *)accountDict;
 - (id)initWithJSON:(NSString *)agentJSON;
 - (id)initWithDictionary:(NSDictionary *)agentDictionary;
 - (NSDictionary *)dictionary;

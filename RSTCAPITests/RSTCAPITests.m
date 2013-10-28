@@ -151,7 +151,7 @@
     
     TCVerb *verb = [[TCVerb alloc] initWithId:@"http://adlnet.gov/expapi/verbs/experienced" withVerbDisplay:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"experienced"]];
     
-    TCQueryOptions *queryOptions = [[TCQueryOptions alloc] initWithActor:[[TCAgent alloc] initWithName:nil withMbox:@"mailto:brian@tincanapi.com"] withVerb:verb withTarget:nil withInstructor:nil withRegistration:nil withContext:YES withSince:@"2013-03-07" withUntil:nil withLimit:[NSNumber numberWithInt:2] withAuthoritative:NO withSparse:NO withAscending:NO];
+    TCQueryOptions *queryOptions = [[TCQueryOptions alloc] initWithActor:[[TCAgent alloc] initWithName:nil withMbox:@"mailto:brian@tincanapi.com" withAccount:nil] withVerb:verb withTarget:nil withInstructor:nil withRegistration:nil withContext:YES withSince:@"2013-03-07" withUntil:nil withLimit:[NSNumber numberWithInt:2] withAuthoritative:NO withSparse:NO withAscending:NO];
     
     [tincan getStatementsWithOptions:queryOptions withCompletionBlock:^(NSArray *statementArray){
         NSLog(@"statementArray %@", statementArray);
@@ -169,7 +169,7 @@
 
 - (TCStatement *)createTestStatementWithOptions:(NSDictionary *)options
 {
-    TCAgent *actor = [[TCAgent alloc] initWithName:@"Brian Rogers" withMbox:@"mailto:brian@tincanapi.com"];
+    TCAgent *actor = [[TCAgent alloc] initWithName:@"Brian Rogers" withMbox:@"mailto:brian@tincanapi.com" withAccount:nil];
     
     TCActivityDefinition *actDef = [[TCActivityDefinition alloc] initWithName:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"http://tincanapi.com/test"]
                                                               withDescription:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"Description for test statement"]
@@ -194,7 +194,7 @@
 
 - (void) testQueryOptions
 {
-    TCQueryOptions *options = [[TCQueryOptions alloc] initWithActor:[[TCAgent alloc] initWithName:@"Test User" withMbox:@"mailto:test@tincanapi.com"] withVerb:[[TCVerb alloc] initWithId:@"http://adlnet.gov/exapi/verbs/attempted" withVerbDisplay:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"attempted"]] withTarget:nil withInstructor:nil withRegistration:nil withContext:YES withSince:nil withUntil:nil withLimit:[NSNumber numberWithInt:25] withAuthoritative:NO withSparse:NO withAscending:NO];
+    TCQueryOptions *options = [[TCQueryOptions alloc] initWithActor:[[TCAgent alloc] initWithName:@"Test User" withMbox:@"mailto:test@tincanapi.com" withAccount:nil] withVerb:[[TCVerb alloc] initWithId:@"http://adlnet.gov/exapi/verbs/attempted" withVerbDisplay:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"attempted"]] withTarget:nil withInstructor:nil withRegistration:nil withContext:YES withSince:nil withUntil:nil withLimit:[NSNumber numberWithInt:25] withAuthoritative:NO withSparse:NO withAscending:NO];
     NSLog(@"%@", [options querystring]);
 }
 
@@ -202,7 +202,7 @@
 {
     
     
-    TCAgent *actor = [[TCAgent alloc] initWithName:@"Brian Rogers" withMbox:@"mailto:brian@tincanapi.com"];
+    TCAgent *actor = [[TCAgent alloc] initWithName:@"Brian Rogers" withMbox:@"mailto:brian@tincanapi.com" withAccount:nil];
     
     TCActivityDefinition *actDef = [[TCActivityDefinition alloc] initWithName:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"http://tincanapi.com/test"]
                                                               withDescription:[[TCLocalizedValues alloc] initWithLanguageCode:@"en-US" withValue:@"Description for test statement"]
