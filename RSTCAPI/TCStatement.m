@@ -98,7 +98,7 @@
     NSMutableDictionary *statement = [[NSMutableDictionary alloc] init];
     [statement setValue:_statementId forKey:@"id"];
     [statement setValue:[_actor dictionary] forKey:@"actor"];
-    if([_target class] == [TCActivity class]){
+    if([_target class] == [TCActivity class] || [_target class] == [TCAgent class]){
         [statement setValue:[(TCActivity *)_target dictionary] forKey:@"object"];
     }
     [statement setValue:[_verb dictionary] forKey:@"verb"];
