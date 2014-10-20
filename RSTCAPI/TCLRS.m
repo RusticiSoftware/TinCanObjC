@@ -65,7 +65,7 @@
  */
 - (void) saveStatement:(TCStatement *)statement withOptions:(NSDictionary *)options withCompletionBlock:(void (^)())completionBlock  withErrorBlock:(void(^)(TCError *))errorBlock
 {
-    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/statements?statementId=%@", _endpoint, [TCUtil GetUUID] ]]];
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/statements?statementId=%@", _endpoint, statement.statementId ]]];
     
     NSString *requestString = [NSString stringWithFormat:@"%@", [statement JSONString], nil];
     NSData *requestData = [NSData dataWithBytes: [requestString UTF8String] length: [requestString length]];
