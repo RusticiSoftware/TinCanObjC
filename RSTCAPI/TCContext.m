@@ -21,11 +21,12 @@
 
 #import "TCContext.h"
 #import "TCUtil.h"
+#import "TCAgent.h"
 
 @interface TCContext()
 {
     NSString *_registration;
-    NSObject *_instructor;
+    TCAgent *_instructor;
     NSObject *_team;
     NSDictionary *_contextActivities;
     NSDictionary *_extensions;
@@ -35,7 +36,7 @@
 
 @implementation TCContext
 
-- (id)initWithRegistration:(NSString *)registration withInstructor:(NSObject *)instructor withTeam:(NSObject *)team withContextActivities:(NSDictionary *)contextActivities withExtensions:(NSDictionary *)extensions
+- (id)initWithRegistration:(NSString *)registration withInstructor:(TCAgent *)instructor withTeam:(NSObject *)team withContextActivities:(NSDictionary *)contextActivities withExtensions:(NSDictionary *)extensions
 {
     if ((self = [super init])) {
         _registration = registration;
@@ -52,7 +53,7 @@
     if ((self = [super init])) {
         
         NSString *contextRegistration = [contextDictionary objectForKey:@"registration"];
-        NSObject *contextInstructor = [contextDictionary objectForKey:@"instructor"];
+        TCAgent *contextInstructor = [contextDictionary objectForKey:@"instructor"];
         NSObject *contextTeam = [contextDictionary objectForKey:@"instructor"];
         NSDictionary *contextActivities = [contextDictionary objectForKey:@"contextActivities"];
         NSDictionary *contextExtensions = [contextDictionary objectForKey:@"extensions"];
@@ -87,8 +88,10 @@
 
 - (NSDictionary *)dictionary
 {
+
     _contextDict = [[NSMutableDictionary alloc] init];
     [_contextDict setValue:_registration forKey:@"registration"];
+    [_contextDict setValue:[_instructor dictionary] forKey:@"instructor"];
     [_contextDict setValue:_extensions forKey:@"extensions"];
     [_contextDict setValue:_contextActivities forKey:@"contextActivities"];
     return [_contextDict copy];
