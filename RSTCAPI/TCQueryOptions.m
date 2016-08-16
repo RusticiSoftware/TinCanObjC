@@ -63,6 +63,7 @@
 - (NSString *) querystring
 {
     NSMutableString *querystring = [[NSMutableString alloc] init];
+    NSCharacterSet *acceptedInput = [NSCharacterSet characterSetWithCharactersInString:@":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`"];
     
     [querystring appendFormat:@"%@",@"?"];
 
@@ -78,7 +79,7 @@
     }
     
     if (_actor) {
-        [querystring appendFormat:@"&actor=%@",[[_actor JSONString] stringByAddingPercentEscapesUsingEncoding:NSStringEncodingConversionAllowLossy]];
+        [querystring appendFormat:@"&actor=%@",[[_actor JSONString] stringByAddingPercentEncodingWithAllowedCharacters:acceptedInput]];
     }
     
     if (_verb) {
@@ -86,19 +87,19 @@
     }
     
     if (_instructor) {
-        [querystring appendFormat:@"&instructor=%@",[[_instructor JSONString] stringByAddingPercentEscapesUsingEncoding:NSStringEncodingConversionAllowLossy]];
+        [querystring appendFormat:@"&instructor=%@",[[_instructor JSONString] stringByAddingPercentEncodingWithAllowedCharacters:acceptedInput]];
     }
     
     if (_registration) {
-        [querystring appendFormat:@"&registration=%@",[_registration stringByAddingPercentEscapesUsingEncoding:NSStringEncodingConversionAllowLossy]];
+        [querystring appendFormat:@"&registration=%@",[_registration stringByAddingPercentEncodingWithAllowedCharacters:acceptedInput]];
     }
     
     if (_since) {
-        [querystring appendFormat:@"&since=%@",[_since stringByAddingPercentEscapesUsingEncoding:NSStringEncodingConversionAllowLossy]];
+        [querystring appendFormat:@"&since=%@",[_since stringByAddingPercentEncodingWithAllowedCharacters:acceptedInput]];
     }
 
     if (_until) {
-        [querystring appendFormat:@"&since=%@",[_until stringByAddingPercentEscapesUsingEncoding:NSStringEncodingConversionAllowLossy]];
+        [querystring appendFormat:@"&since=%@",[_until stringByAddingPercentEncodingWithAllowedCharacters:acceptedInput]];
     }
     
     if (_target) {
