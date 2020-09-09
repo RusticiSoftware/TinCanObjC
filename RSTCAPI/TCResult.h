@@ -10,7 +10,7 @@
 
 @interface TCResult : NSObject
 
-- (id) initWithResponse:(NSString *)response withScore:(NSDictionary *)scoreDict withSuccess:(NSNumber *)success withCompletion:(NSNumber *)completion withDuration:(NSString *)duration withExtensions:(NSDictionary *)extensions;
+- (id) initWithResponse:(NSString *)response withScore:(NSDictionary *)scoreDict withSuccess:(Boolean)success withCompletion:(Boolean)completion withDuration:(NSString *)duration withExtensions:(NSDictionary *)extensions;
 
 - (id) initWithDictionary:(NSDictionary *)verbDictionary;
 - (NSDictionary *)dictionary;

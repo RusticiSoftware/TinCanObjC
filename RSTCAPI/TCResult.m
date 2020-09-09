@@ -13,8 +13,8 @@
 {
     NSString *_response;
     NSDictionary *_score;
-    NSNumber *_success;
-    NSNumber *_completion;
+    Boolean *_success;
+    Boolean *_completion;
     NSString *_duration;
     NSDictionary *_extensions;
     NSMutableDictionary *_resultDict;
@@ -24,13 +24,13 @@
 
 @implementation TCResult
 
-- (id) initWithResponse:(NSString *)response withScore:(NSDictionary *)scoreDict withSuccess:(NSNumber *)success withCompletion:(NSNumber *)completion withDuration:(NSString *)duration withExtensions:(NSDictionary *)extensions
+- (id) initWithResponse:(NSString *)response withScore:(NSDictionary *)scoreDict withSuccess:(Boolean)success withCompletion:(Boolean)completion withDuration:(NSString *)duration withExtensions:(NSDictionary *)extensions
 {
     if ((self = [super init])) {
         _response = response;
         _score = scoreDict;
-        _success = success;
-        _completion = completion;
+		_success = &success;
+		_completion = &completion;
         _duration = duration;
         _extensions = extensions;
     }
@@ -61,12 +61,12 @@
         
         if(resultSuccess)
         {
-            _success = resultSuccess;
+			_success = resultSuccess.boolValue;
         }
         
         if(resultCompletion)
         {
-            _completion = resultCompletion;
+			_completion = resultCompletion.boolValue;
         }
         
         if(resultDuration)
@@ -87,8 +87,8 @@
     _resultDict = [[NSMutableDictionary alloc] init];
     [_resultDict setValue:_response forKey:@"response"];
     [_resultDict setValue:_score forKey:@"score"];
-    [_resultDict setValue:_success forKey:@"success"];
-    [_resultDict setValue:_completion forKey:@"completion"];
+	[_resultDict setValue:[NSNumber numberWithBool:_success] forKey:@"success"];
+	[_resultDict setValue: [NSNumber numberWithBool: _completion] forKey:@"completion"];
     [_resultDict setValue:_duration forKey:@"duration"];
     [_resultDict setValue:_extensions forKey:@"extensions"];
     return [_resultDict copy];
